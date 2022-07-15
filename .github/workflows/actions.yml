@@ -1,13 +1,24 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: ["build"]
+  push:
+    branches:
+      - master
+      - "feature/*" # matches feature/feata
+        # does not match feature/feat/a
+      - "feature/**" # matches both feature/feata and feature/feat/a
+      - "!feature/featc" # branch feature/featc is ignored
+    tags:
+      - v1.*
+    paths:
+      - "**.js" # workflow will run whenever a js file is pushed
+  # repository_dispatch:
+  #   types: ["build"]
   # schedule:
   #   - cron: "0 12 * JAN 0"
   # push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
