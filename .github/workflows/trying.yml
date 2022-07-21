@@ -1,0 +1,19 @@
+name: Lighthouse CI
+on: pull_request
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set context
+        id: output_context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "::set-output name=LIGHTHOUSE_CONTEXT::$GITHUB_CONTEXT"
+
+      - name: Format score
+        id: format_score
+        uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # v6
+        with:
+          script: |
+            const text = ${{ steps.output_context.outputs}};
+            console.log('text: ', text)
