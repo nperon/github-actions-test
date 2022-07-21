@@ -1,4 +1,4 @@
-name: Lighthouse CI
+name: Try CI
 on: push
 jobs:
   lighthouse:
