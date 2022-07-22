@@ -19,6 +19,8 @@ jobs:
       #       console.log('text: ', text)
 
       - name: Do Work
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo '::set-output name=FAV_NUMBER::3'
           echo '::set-output name=FAV_COLOR::blue'
