@@ -24,7 +24,7 @@ jobs:
         run: |
           echo '::set-output name=FAV_NUMBER::3'
           echo '::set-output name=FAV_COLOR::blue'
-          LOCAL_RUN_ID = $GITHUB_CONTEXT | jq '.run_id'
+          export LOCAL_RUN_ID = $GITHUB_CONTEXT | jq '.run_id'
           echo $LOCAL_RUN_ID
         id: abc
 
