@@ -28,6 +28,7 @@ jobs:
           LOCAL_RUN_ID=`echo $GITHUB_CONTEXT | jq '.run_id'`
           echo $LOCAL_RUN_ID
           echo '::set-output name=RUN_ID::{toto}'
+          echo "action_state=yellow" >> $GITHUB_ENV
         id: abc
 
       - name: Read Output
@@ -35,3 +36,4 @@ jobs:
           echo "${{steps.abc.outputs.FAV_NUMBER}}"
           echo "${{steps.abc.outputs.FAV_COLOR}}"
           echo "${{steps.abc.outputs.RUN_ID}}"
+          echo "${{ env.action_state }}" # This will output 'yellow'
