@@ -28,7 +28,7 @@ jobs:
           LOCAL_RUN_ID=`echo $GITHUB_CONTEXT | jq '.run_id'`
           echo $LOCAL_RUN_ID
           echo '::set-output name=RUN_ID::{toto}'
-          echo "action_state=yellow" >> $GITHUB_ENV
+          echo "action_state=$LOCAL_RUN_ID" >> $GITHUB_ENV
         id: abc
 
       - name: Read Output
