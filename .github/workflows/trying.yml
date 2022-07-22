@@ -24,6 +24,7 @@ jobs:
         run: |
           echo '::set-output name=FAV_NUMBER::3'
           echo '::set-output name=FAV_COLOR::blue'
+          cat $GITHUB_CONTEXT | jq '.run_id'
         id: abc
 
       - name: Read Output
