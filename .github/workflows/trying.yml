@@ -26,6 +26,7 @@ jobs:
           echo '::set-output name=FAV_COLOR::blue'
           # echo $GITHUB_CONTEXT | jq '.run_id'
           LOCAL_RUN_ID=`echo $GITHUB_CONTEXT | jq '.run_id'`
+          echo $LOCAL_RUN_ID
         id: abc
 
       - name: Read Output
