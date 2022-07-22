@@ -7,7 +7,7 @@ jobs:
       - name: Set context
         id: output_context
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_CONTEXT: ${{ toJson(github).run_id }}
         run: echo "$GITHUB_CONTEXT"
 
       - name: Format score
