@@ -8,7 +8,7 @@ jobs:
         id: output_context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "::set-output name=LIGHTHOUSE_CONTEXT::$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Format score
         id: format_score
