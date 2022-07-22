@@ -16,4 +16,4 @@ jobs:
         with:
           script: |
             const text = ${{ steps.output_context.outputs}};
-            console.log('text: ', JSON.stringify(text, null, 2))
+            console.log('text : ', JSON.stringify(text, null, 2))
