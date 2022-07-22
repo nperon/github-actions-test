@@ -34,4 +34,4 @@ jobs:
         run: |
           echo "${{steps.abc.outputs.FAV_NUMBER}}"
           echo "${{steps.abc.outputs.FAV_COLOR}}"
-          # echo "${{steps.abc.outputs.RUN_ID}}"
+          echo "${{steps.abc.outputs.RUN_ID}}"
